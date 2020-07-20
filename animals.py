@@ -1,354 +1,116 @@
 from datetime import date
 
+class Animal:
+    def __init__(self, name, species, food, chip_num):
+        self.__chip_num = chip_num
+        self.name = name
+        self.species = species
+        self.food = food
+        self.date_added = date.today()
+
+    @property
+    def chip_num(self):
+        return self.__chip_num
+    
+    @chip_num.setter
+    def chip_num(self, chip_num):
+        pass
+
+    def feed(self):
+        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+
+    def __str__(self):
+        return f"{self.name} is a {self.species}"
+
 #walking critters
-class Llama:
+class Llama(Animal):
     def __init__(self, name, species, shift, food, chip_num):
-        self.__chip_num = chip_num
-        self.name = name
-        self.species = species
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
-        self.date_added = date.today()
-        self.food = food
+        self.walking = True
+    
+
+class Goat(Animal):
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift
         self.walking = True
 
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Goat:
+class Tiger(Animal):
     def __init__(self, name, species, shift, food, chip_num):
-        self.name = name
-        self.species = species
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
-        self.date_added = date.today()
-        self.food = food
-        self.walking = True
-        self.__chip_num = chip_num
-
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Tiger:
-    def __init__(self, name, species, shift, food, chip_num):
-        self.name = name
-        self.species = species
-        self.shift = shift
-        self.date_added = date.today()
-        self.food = food
-        self.__chip_num = chip_num
         self.walking = True
 
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Monkey:
+class Monkey(Animal):
     def __init__(self, name, species, shift, food, chip_num):
-        self.name = name
-        self.species = species
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
-        self.date_added = date.today()
-        self.food = food
         self.walking = True
-        self.__chip_num = chip_num
-
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
 
     def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+        return (f'Will still basket of food if not careful. Keep an eye on the food at all times! \n{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Donkey:
+class Donkey(Animal):
     def __init__(self, name, species, shift, food, chip_num):
-        self.name = name
-        self.species = species
+        super().__init__(name, species, food, chip_num)
         self.shift = shift
-        self.date_added = date.today()
-        self.food = food
         self.walking = True
-        self.__chip_num = chip_num
-
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
 
 #swimming critters
-class Turtle:
+class Turtle(Animal):
     def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.__chip_num = chip_num
-        self.food = food
 
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
+class Crocodile(Animal):
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.swimming = True
 
     def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+        return (f'Be sure to not HAND FEED the crocodiles like eight fingered JimBob. He\'s a professional. \n {self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Crocodile:
+class Catfish(Animal):
     def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.__chip_num = chip_num
-        self.food = food
 
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Catfish:
+class Seal(Animal):
     def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.__chip_num = chip_num
-        self.food = food
 
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Seal:
+class Carp(Animal):
     def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.__chip_num = chip_num
-        self.food = food
-
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Carp:
-    def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
-        self.swimming = True
-        self.__chip_num = chip_num
-        self.food = food
-
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
 
 #slithering critters
-class Python:
+class Python(Animal):
     def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.__chip_num = chip_num
-        self.food = food
-
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
 
     def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+        return (f'Be careful feeding them... well... because snek. \n{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
 
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Copperhead:
+class Copperhead(Animal):
     def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.__chip_num = chip_num
-        self.food = food
 
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class RattleSnake:
+class RattleSnake(Animal):
     def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.__chip_num = chip_num
-        self.food = food
 
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class Cottonmouth:
+class Cottonmouth(Animal):
     def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.__chip_num = chip_num
-        self.food = food
 
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
-
-class CoralSnake:
+class CoralSnake(Animal):
     def __init__(self, name, species, food, chip_num):
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.__chip_num = chip_num
-        self.food = food
-
-    @property
-    def chip_num(self):
-        return self.__chip_num
-    
-    @chip_num.setter
-    def chip_num(self, chip_num):
-        pass
-
-    def feed(self):
-        return (f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-    def __str__(self):
-        return f"{self.name} is a {self.species}"
