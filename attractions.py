@@ -13,6 +13,10 @@ class PettingZoo:
                         report += f'  * {animal.name} the {animal.species}.\n'
                 return report
 
+        @property
+        def last_critter_added(self):
+                return f'{self.animals[-1].name} the {self.animals[-1].species}'
+
 class SnakePit:
         def __init__(self, name):
                 self.name = name
@@ -28,6 +32,10 @@ class SnakePit:
                         report += f'  * {animal.name} the {animal.species}.\n'
                 return report
 
+        @property
+        def last_critter_added(self):
+                return f'{self.animals[-1].name} the {self.animals[-1].species}'
+
 class Wetlands:
         def __init__(self, name):
                 self.name = name
@@ -42,3 +50,7 @@ class Wetlands:
                 for animal in self.animals:
                         report += f'  * {animal.name} the {animal.species}.\n'
                 return report
+
+        @property
+        def last_critter_added(self):
+                return f'{self.animals[-1].name} the {self.animals[-1].species}'
