@@ -1,4 +1,4 @@
-from animals import Llama, Goat, Tiger, Monkey, Donkey, Turtle, Crocodile, Catfish, Seal, Carp, Python, Copperhead, RattleSnake, Cottonmouth, CoralSnake
+from animals import Carp, Catfish, Copperhead, CoralSnake, Cottonmouth, Crocodile, Donkey, Goat, Llama, Monkey, Python, RattleSnake, Seal, Tiger, Turtle
 from attractions import PettingZoo, SnakePit, Wetlands
 
 # Naming attractions
@@ -48,5 +48,7 @@ print(monty.feed())
 print(mouf)
 print(critter_cove)
 print(the_slither_inn)
+# varmint_village.animals.remove(mizz_fuzz)
 print(varmint_village)
 print('The newest animal is', critter_cove.last_critter_added)
+varmint_village.add(big_mouth)
